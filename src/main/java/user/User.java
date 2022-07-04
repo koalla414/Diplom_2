@@ -19,8 +19,21 @@ public class User {
             String email = RandomStringUtils.randomAlphanumeric(10) + "@" + RandomStringUtils.randomAlphabetic(10) + ".ru";
             String password = RandomStringUtils.randomAlphanumeric(10);
             String name = RandomStringUtils.randomAlphanumeric(10);
-
             return new User(email, password, name);
         }
 
+        public static String getRandomEmail() {
+            String email = RandomStringUtils.randomAlphanumeric(10) + "@" + RandomStringUtils.randomAlphabetic(10) + ".ru";
+            return email;
+        }
+
+        public static String getRandomPassword() {
+            String password = RandomStringUtils.randomAlphanumeric(10);
+            return password;
+        }
+
+        public static String getRandomName() {
+            String name = RandomStringUtils.randomAlphanumeric(10);
+            return name;
+        }
 }
