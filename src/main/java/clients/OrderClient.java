@@ -8,7 +8,7 @@ public class OrderClient extends RestAssuredClient {
     private final String ROOT = "/orders";
 
     public ExtractableResponse<Response> createOrder(String accessToken ,Order ingredients) {
-        return regSpec
+        return regSpec()
                 .header("Authorization", accessToken)
                 .body(ingredients)
                 .when()
@@ -18,7 +18,7 @@ public class OrderClient extends RestAssuredClient {
     }
 
     public ExtractableResponse<Response> getListOrder(String accessToken) {
-        return regSpec
+        return regSpec()
                 .header("Authorization", accessToken)
                 .when()
                 .get(ROOT)

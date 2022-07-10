@@ -12,7 +12,7 @@ public class UserClient extends RestAssuredClient {
     private final String LOGIN = ROOT + "/login";
 
     public ExtractableResponse<Response> create(User user) {
-        return regSpec
+        return regSpec()
                 .body(user)
                 .when()
                 .post(REGISTER)
@@ -21,7 +21,7 @@ public class UserClient extends RestAssuredClient {
     }
 
     public ExtractableResponse<Response> login(UserCredentials creds) {
-        return regSpec
+        return regSpec()
                 .body(creds)
                 .when()
                 .post(LOGIN)
@@ -39,7 +39,7 @@ public class UserClient extends RestAssuredClient {
     }
 
     public ExtractableResponse<Response> changeData(String accessToken, User user) {
-        return regSpec
+        return regSpec()
                 .header("Authorization", accessToken)
                 .body(user)
                 .when()
